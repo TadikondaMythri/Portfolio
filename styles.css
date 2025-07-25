@@ -1,0 +1,485 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif, 'Eagle Lake';
+    font-optical-sizing: auto;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px 50px;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 9999;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 4vw;
+    font-size: 34px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 200px;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00e0ff;
+    color: #00e0ff;
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00e0ff;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.profile-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #050505;
+    object-fit: cover;
+    animation: zoomIn 1.5s ease-in-out;
+    margin-top: 120px ;
+}
+
+.intro {
+    margin-top: 150px;
+    max-width: 700px;
+    animation: fadeInRight 1.5s ease-in-out;
+}
+
+.intro h1 {
+    color: #00e0ff;
+    font-weight: 450;
+    font-style: normal;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    margin-top: 54px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+.desc {
+    margin: 20px 20px 10px 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #f3f4f6;
+    text-align: center;
+}
+
+.socials {
+    margin: 10px 5px 30px 5px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+}
+
+.socials a {
+    padding: 8px 16px;
+    font-size: 45px;
+    color: #ffffff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socials a:hover {
+    color: #00e0ff;
+    transform: scale(1.2);
+}
+
+
+.education {
+    padding: 50px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #00e0ff;
+}
+
+.timeline {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
+    color: #ffffff;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #00e0ff;
+    transform: translateX(-50%);
+}
+
+/* Common Box Styles */
+.edu-left,
+.edu-right {
+    position: relative;
+    width: 40%;
+    padding: 20px 25px;
+    background-color: #1e293b;
+    border-radius: 15px;
+    margin: 40px -30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Left and Right Positioning */
+.edu-left {
+    left: 0;
+    margin-right: auto;
+}
+
+.edu-right {
+    right: 0;
+    margin-left: auto;
+}
+
+/* Heading Style */
+.edu-left h1,
+.edu-right h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.edu-left:hover,
+.edu-right:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #00e0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Skills Section */
+.skills {
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #00e0ff;
+}
+
+/* Skills Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Each Skill Card */
+.skill-item {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    background: #1e1e1e;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.3);
+}
+
+.skill-item:hover {
+    transform: scale(1.08);
+}
+
+/* Front View - Icon + Name */
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease;
+}
+
+.front i {
+    font-size: 30px;
+    color: #00e0ff;
+    margin-bottom: 6px;
+}
+
+.front p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.back {
+    background-color: #f0f2f2;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    border-radius: 15px;
+}
+
+/* Hover effect: hide front, show back */
+.skill-item:hover .front {
+    opacity: 0;
+}
+
+.skill-item:hover .back {
+    opacity: 1;
+}
+
+.projects {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 32px;
+    color: #00e0ff;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 30px;
+}
+
+.project-box {
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00f2ff33;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.project-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00e0ff;
+}
+
+.project-box h3 {
+    color: #00e0ff;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.project-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #dddddd;
+}
+
+.project-box ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.project-box p em {
+    color: #ccc;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 0.85rem;
+}
+
+.contact {
+    padding: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact h2 {
+    color: #00e0ff;
+    font-size: 32px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.links a {
+    font-size: 25px;
+    color: #00e0ff;
+    padding: 30px 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 10px #00e0ff55;
+}
+
+.links a:hover {
+    background-color: #00e0ff;
+    color: #0a0a0a;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px #00e0ffcc;
+}
+
+/* Quick Links Section */
+.quick-links {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+.quick-links h3 {
+    font-size: 24px;
+    color: #00e0ff;
+    margin-bottom: 10px;
+}
+
+.qlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+
+.qlinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.qlinks a:hover {
+    color: #00e0ff;
+}
+
+.qlinks p {
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111; /* background of track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00e0ff;  /* color of the scroll thumb */
+    border-radius: 20px;
+    size: 5px;;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00c0dd;  /* color on hover */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        margin-right: 0;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .intro {
+        margin-top: 80px;
+    }
+
+    .profile-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 10px; /* better for mobile */
+    }
+
+    .edu-left, .edu-right {
+        width: 90%;
+        margin: 20px auto;
+        left: auto;
+        right: auto;
+    }
+}
